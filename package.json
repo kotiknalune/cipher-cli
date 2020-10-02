@@ -1,0 +1,29 @@
+{
+  "name": "cipher-cli",
+  "version": "1.0.0",
+  "description": "A Casers's cipher command line tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm index.js"
+  },
+  "keywords": [
+    "cipher",
+    "caesar",
+    "cli"
+  ],
+  "author": "Katerina Railian <katerina.railian@mail.ru>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotiknalune/cipher-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kotiknalune/cipher-cli/issues"
+  },
+  "homepage": "https://github.com/kotiknalune/cipher-cli#readme",
+  "dependencies": {
+    "commander": "^6.1.0",
+    "nodemon": "^2.0.4"
+  }
+}
