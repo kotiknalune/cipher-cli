@@ -16,7 +16,7 @@ $ node cipher-cli/index.js --action <encode|decode> --shift <number> [--input <i
 | :------ |---------- |
 |*-s, --shift <number>*|shift value (required)|
 |*-a, --action \<encode\*|decode>|action encode/decode (required)|
-|*-i, --input \<input>*|input file (if none then stdin is used)|
+|*-i, --input \<input>\*|input file (if none then stdin is used)|
 |*-o, --output <output>*|output file (if none then stdout is used)|
 
 **Usage example:**
