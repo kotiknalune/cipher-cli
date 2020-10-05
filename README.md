@@ -10,7 +10,7 @@ CLI Tool to transform inputs using [Caesar cipher](https://en.wikipedia.org/wiki
 #### Usage
 
 ```bash
-$ node caesar_cipher_cli/index.js --action <encode|decode> --shift <number> [--input <input>] [--output <output>]
+$ node cipher-cli/index.js --action <encode|decode> --shift <number> [--input <input>] [--output <output>]
 ```
 | Option | Description |
 | :------ |---------- |
