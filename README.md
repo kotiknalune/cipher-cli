@@ -18,7 +18,7 @@ $ node caesar_cipher_cli/index.js --action <encode|decode> --shift <number> [--i
 |*-a, --action \<encode\|decode>*|action to perform (encode/decode)|
 |*-i, --input \<input>*|input file (if none then stdin is used)|
 |*-o, --output <output>*|output file (if none then stdout is used)|
-|*-h, --help*|display help for command|
+
 **Usage example:**
 
 ```bash
@@ -26,12 +26,13 @@ $ node caesar_cipher_cli/index.js -a encode -s 7 -i "./input.txt" -o "./output.t
 ```
 
 ```bash
-$ node caesar_cipher_cli/index.js --action encode --shift 7 --input plain.txt --output encoded.txt
+$ node caesar_cipher_cli/index.js --action encode --shift 7 --input original.txt --output encoded.txt
 ```
 
 ```bash
-$ node caesar_cipher_cli/index.js --action decode --shift 7 --input decoded.txt --output plain.txt
+$ node caesar_cipher_cli/index.js --action decode --shift 7 --input decoded.txt --output original.txt
 ```
+
 **Result example:**
 
 > input.txt
