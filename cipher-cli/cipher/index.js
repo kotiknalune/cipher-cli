@@ -1,5 +1,5 @@
 const { exit, stderr } = process;
-const { alphabet } = require('../config/lang.config');
+const { alphabet, actions } = require('../config');
 
 const cipher = (shift, string, action) => {
     if (isNaN(shift) || shift < 0) {
@@ -10,7 +10,8 @@ const cipher = (shift, string, action) => {
     const originalLetterOrder = `${alphabet.uppercase}${alphabet.lowercase}`;
 
     function shuffleAlphabet(key) {
-        if (key%alphabet.letters === 0) return originalLetterOrder;
+        if (key % alphabet.letters === 0) return originalLetterOrder;
+        if (key > alphabet.letters ) key = key % alphabet.letters;
 
         const letterArray = alphabet.lowercase.split('');
         for (let i = 0; i < key; i += 1) {
@@ -27,9 +28,16 @@ const cipher = (shift, string, action) => {
         return string.split('').map(translate).join('');
     }
 
-    const cipher = shuffleAlphabet(shift);
-    if (action === 'encode') shuffleString(originalLetterOrder, cipher);
-    if (action === 'decode') shuffleString(cipher, originalLetterOrder);
+    const cipherLetterOrder = shuffleAlphabet(shift);
+    switch (action) {
+        case actions.encode:
+            shuffleString(originalLetterOrder, cipherLetterOrder);
+        case actions.decode:
+            shuffleString(cipherLetterOrder, originalLetterOrder);
+        default:
+            process.stderr.write(`\nError: '-a, --action' parameter is required and should be either ${actions.encode} or ${actions.decode}\n`);
+            exit(1);
+    }
 }
 
 module.exports = { 

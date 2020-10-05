@@ -4,4 +4,12 @@ const alphabet = {
     uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 }
 
-module.exports = { alphabet };
+const actions = {
+    encode: 'encode', 
+    decode: 'decode'
+}
+
+module.exports = { 
+    alphabet,
+    actions
+};
