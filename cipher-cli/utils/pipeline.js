@@ -8,7 +8,7 @@ function cipherPipeline(read, transform, write) {
         write,
         (err) => {
             if (err) {
-                stderr.write(`\nUps, an error occurred: ${err.message}\n`);
+                stderr.write(`\nUps... an error occurred!\n${err.message}\n\n`);
                 exit(1);
             } else {
                 stdout.write('Success!');

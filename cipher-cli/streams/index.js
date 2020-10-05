@@ -1,12 +1,14 @@
 const fs = require('fs');
 const stream = require('stream');
+const path = require('path');
+
 const { cipher } = require('../cipher');
 
 const writeError = (file) => process.stderr.write(`\n File name "${file}" is invalid!\n`);
-const encoding = 'utf8'
+const encoding = 'utf8';
 
 function Readable(input) {
-    if (input) return fs.createReadStream(input, encoding);
+    if (input) return fs.createReadStream(path.join(__dirname, '../', input), encoding);
     if (input === undefined) {
         process.stdout.write('\nEnter text...\n');
         return process.stdin;
@@ -16,7 +18,7 @@ function Readable(input) {
 }
 
 function Writable(output) {
-    if (output) return fs.createWriteStream(output, { flags: 'a' });
+    if (output) return fs.createWriteStream(path.join(__dirname, '../', output), { flags: 'a' });
     if (output === undefined) return process.stdout;
 
     writeError(output);
