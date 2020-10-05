@@ -35,7 +35,6 @@ const cipher = (shift, string, action) => {
         case actions.decode:
             return shuffleString(cipherLetterOrder, originalLetterOrder);
         default:
-            console.log(action, actions.encode)
             process.stderr.write(`\nError: '-a, --action' parameter is required and should be either ${actions.encode} or ${actions.decode}\n`);
             exit(1);
     }

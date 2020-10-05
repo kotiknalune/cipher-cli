@@ -3,10 +3,11 @@ const { exit } = process;
 
 program
   .storeOptionsAsProperties(true)
-  .requiredOption('-s, --shift <type>', 'a shift number')
+  .requiredOption('-s, --shift <number>', 'a shift number')
   .requiredOption('-a, --action <type>', 'an action encode/decode')
   .option('-i, --input [mode]')
   .option('-o, --output [mode]');
+
 program.parse(process.argv);
 
 const inputFile = program.input;
