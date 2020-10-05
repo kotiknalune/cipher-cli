@@ -1,8 +1,8 @@
-## Caesar cipher CLI tool
+## Caesar's Cipher CLI Tool
 
 CLI Tool to transform inputs using [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
 
-#### Install
+#### Installation
 
 1. Clone or download repository
 2. Run ```npm install``` to download required packages
