@@ -2,7 +2,7 @@ const { exit, stderr } = process;
 const { alphabet, actions } = require('../config');
 
 const cipher = (shift, string, action) => {
-    if (isNaN(shift) || shift < 0) {
+    if (Number.isNaN(shift) || shift < 0) {
         stderr.write('\nError: "-s, --shift" parameter should be a positive number"\n');
         exit(1);
     }
@@ -31,10 +31,11 @@ const cipher = (shift, string, action) => {
     const cipherLetterOrder = shuffleAlphabet(shift);
     switch (action) {
         case actions.encode:
-            shuffleString(originalLetterOrder, cipherLetterOrder);
+            return shuffleString(originalLetterOrder, cipherLetterOrder);
         case actions.decode:
-            shuffleString(cipherLetterOrder, originalLetterOrder);
+            return shuffleString(cipherLetterOrder, originalLetterOrder);
         default:
+            console.log(action, actions.encode)
             process.stderr.write(`\nError: '-a, --action' parameter is required and should be either ${actions.encode} or ${actions.decode}\n`);
             exit(1);
     }
