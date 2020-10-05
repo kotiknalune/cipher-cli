@@ -25,7 +25,7 @@ const cipher = (shift, string, action) => {
     function shuffleString(from, to) {
         const index = x => to.indexOf(x);
         const translate = x => index(x) > -1 ? from[index(x)] : x;
-        return string.split('').map(translate).join('');
+        return `${string.split('').map(translate).join('')}\n`;
     }
 
     const cipherLetterOrder = shuffleAlphabet(shift);
