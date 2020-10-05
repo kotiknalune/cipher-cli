@@ -9,7 +9,7 @@ function Readable(input) {
 
     if (fs.existsSync(input)) return fs.createReadStream(input, encoding);
     if (input === undefined) {
-        process.stdout.write('\n Enter text...\n');
+        process.stdout.write('\nEnter text...\n');
         return process.stdin;
     }
     writeError(input);
